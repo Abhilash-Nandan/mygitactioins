@@ -1,10 +1,18 @@
-name: example
+on: [ push, pull_request ]
 
-on: push
-
-
+jobs:
+  test-yaml-reader:
+    runs-on: ubuntu-latest
+    name: Test read-yaml
     steps:
-      - name: My first step
-        run: echo This is the first step of my first job.
+      - uses: actions/checkout@v1
 
-          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
+      - name: Run read-yaml action
+        id: var
+        uses: ./
+        with:
+          file: './dev.yml'
+          key-path: '["runs", "using"]'
+
+      - name: Get read-yaml output
+        run: echo "${{ steps.var.outputs.data }}"
