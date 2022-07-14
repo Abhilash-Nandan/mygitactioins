@@ -3,13 +3,13 @@ on: [ push, pull_request ]
 jobs:
   actions-yaml-reader:
     runs-on: ubuntu-latest
-    name: actions read-yaml
+    name: actions read-yaml actions
     steps:
       - uses: actions/checkout@main
 
       - name: Run read-yaml dev
         id: var
-        uses: ./dev.yaml
+        uses: ./
         with:
           file: './dev.yaml'
           key-path: '["runs", "using"]'
