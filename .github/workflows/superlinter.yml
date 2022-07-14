@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Run read-yaml action
+      - name: Run read-yaml dev
         id: var
         uses: ./
         with:
