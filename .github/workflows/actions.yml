@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test read-yaml
     steps:
-      - uses: superlinter/checkout@v1
+      - uses: actions/checkout@v1
 
       - name: Run read-yaml dev
         id: var
