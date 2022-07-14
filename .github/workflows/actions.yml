@@ -1,9 +1,9 @@
 on: [ push, pull_request ]
 
 jobs:
-  test-yaml-reader:
+  actions-yaml-reader:
     runs-on: ubuntu-latest
-    name: Test read-yaml
+    name: actions read-yaml
     steps:
       - uses: actions/checkout@main
 
@@ -11,7 +11,7 @@ jobs:
         id: var
         uses: ./
         with:
-          file: './dev.yml'
+          file: './dev.yaml'
           key-path: '["runs", "using"]'
 
       - name: Get read-yaml output
