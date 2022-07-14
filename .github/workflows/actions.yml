@@ -9,7 +9,7 @@ jobs:
 
       - name: Run read-yaml dev
         id: var
-        uses: ./
+        
         with:
           file: './dev.yaml'
           key-path: '["runs", "using"]'
